@@ -18,6 +18,7 @@ class HTMLLocalizer {
 class LocalizedTextElement extends HTMLElement {
     constructor() {
         super();
+        this.storageKey = "preferred-locale";
         this.dataAttribute = "data-lang";
         this.key = "key";
     }
