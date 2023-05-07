@@ -2,10 +2,12 @@ var dictionary = {
     "en": {
         "language": "EN",
         "introduction_title": "Full Stack and Data Engineer.",
+        "project_mimosa_title": "Mimosa",
     },
     "zh": {
         "language": "中文（简体）",
         "introduction_title": "全栈和数据工程师。",
+        "project_mimosa_title": "Mimosa",
     }
 }
 
