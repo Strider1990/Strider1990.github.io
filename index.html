@@ -5,37 +5,124 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="styles/main.css" rel="stylesheet">
+	<script src="scripts/script.js"></script>
+	<script src="scripts/init.js" defer></script>
 	<title>Strider1990's GitHub Page</title>
 </head>
 
-<body class="flex flex-col h-full bg-zinc-50">
+<body class="flex flex-col h-full bg-zinc-50 dark:bg-black">
 	<div class="fixed inset-0 flex justify-center sm:px-8">
 		<div class="flex w-full max-w-7xl lg:px-8">
 			<div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
 		</div>
 	</div>
-	<div class="relative">
+	<div class="relative sm:px-8">
 		<header class="pt-6">
-			<div class="flex flex-1 justify-end md:justify-center">
-				<div class="pointer-events-auto md:hidden" data-headlessui-state=""><button
-						class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
-						type="button" aria-expanded="false" data-headlessui-state=""
-						id="headlessui-popover-button-:R2qb6:">Menu<svg viewBox="0 0 8 6" aria-hidden="true"
-							class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400">
-							<path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" stroke-width="1.5" stroke-linecap="round"
-								stroke-linejoin="round"></path>
-						</svg></button></div>
-				<nav class="pointer-events-auto hidden md:block">
-					<ul
-						class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-						<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-								href="#introduction">About Me</a></li>
-						<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-								href="#projects">Projects</a></li>
-						<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
-								href="#experience">Experience</a></li>
-					</ul>
-				</nav>
+			<div class="flex gap-2 mx-auto max-w-2xl lg:max-w-6xl lg:px-8">
+				<div class="flex flex-1"></div>
+				<div class="flex flex-1 justify-end md:justify-center">
+					<div class="pointer-events-auto md:hidden">
+						<button
+							onclick="showMenu('menu')"
+							class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
+							type="button" aria-expanded="false">Menu<svg viewBox="0 0 8 6" aria-hidden="true"
+								class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400">
+								<path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" stroke-width="1.5"
+									stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+						</button>
+						<div id="menu" class="invisible fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 opacity-100 scale-100">
+							<div class="flex flex-row-reverse items-center justify-between">
+								<button
+									onclick="hideMenu('menu')"
+									aria-label="Close menu" class="-m-1 p-1" type="button"
+									tabindex="0"><svg viewBox="0 0 24 24" aria-hidden="true"
+										class="h-6 w-6 text-zinc-500 dark:text-zinc-400">
+										<path d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5" fill="none"
+											stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+											stroke-linejoin="round"></path>
+									</svg>
+								</button>
+								<h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Navigation</h2>
+							</div>
+							<nav class="mt-6">
+								<ul
+									class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+									<li><a class="block py-2" href="#introduction">About</a></li>
+									<li><a class="block py-2" href="#projects">Projects</a>
+									</li>
+									<li><a class="block py-2" href="#experience">Experience</a>
+									</li>
+									<li><a class="block py-2" href="#education">Education</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<nav class="pointer-events-auto hidden md:block">
+						<ul
+							class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+							<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+									href="#introduction">About</a></li>
+							<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+									href="#projects">Projects</a></li>
+							<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+									href="#experience">Experience</a></li>
+							<li><a class="relative block px-3 py-2 transition hover:text-teal-500 dark:hover:text-teal-400"
+									href="#education">Education</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="flex justify-end md:flex-1">
+					<div class="flex gap-2 pointer-events-auto">
+						<div class="relative">
+							<button onclick="showMenu('language-menu')" type="button" aria-label="Set language"
+								class="rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
+								<localized-text class="dark:text-zinc-200 dark:ring-white/10" key="language"></localized-text>
+							</button>
+							<div id="language-menu" class="invisible absolute right-0 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 opacity-100 scale-100">
+								<div class="flex flex-row-reverse items-center justify-between">
+									<button
+										onclick="hideMenu('language-menu')"
+										aria-label="Close menu" class="-m-1 p-1" type="button"
+										tabindex="0"><svg viewBox="0 0 24 24" aria-hidden="true"
+											class="h-6 w-6 text-zinc-500 dark:text-zinc-400">
+											<path d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5" fill="none"
+												stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+												stroke-linejoin="round"></path>
+										</svg>
+									</button>
+									<h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">Language</h2>
+								</div>
+								<nav class="mt-6">
+									<ul
+										class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+										<li><button onclick="setLocaleLanguage('en')" class="block py-2 dark:text-zinc-200 dark:ring-white/10" href="">EN - English</button></li>
+										<li><button onclick="setLocaleLanguage('zh')" class="block py-2 dark:text-zinc-200 dark:ring-white/10" href="#projects">ZH - 中文（简体</button></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<button onclick="toggleDark()" type="button" aria-label="Toggle dark mode"
+							class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"><svg
+								viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+								aria-hidden="true"
+								class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600">
+								<path
+									d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z">
+								</path>
+								<path
+									d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061"
+									fill="none"></path>
+							</svg><svg viewBox="0 0 24 24" aria-hidden="true"
+								class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500">
+								<path
+									d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
+									stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
 			</div>
 		</header>
 		<main>
@@ -47,10 +134,13 @@
 								<div class="max-w-4xl">
 									<h1
 										class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-										Fullstack and Data Engineer.</h1>
+										<localized-text key="introduction_title">
+											</localized-tex>
+									</h1>
 									<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">I’m Alex, a fullstack and
 										software engineer based in Singapore. I'm currently working at Grab, helping to
-										develop systems to decentralize and enable domain teams to perform cross-domain data
+										develop systems to decentralize and enable domain teams to perform cross-domain
+										data
 										analysis.</p>
 									<div class="mt-6 flex gap-6">
 										<a class="group -m-1 p-1" aria-label="View GitHub Profile"
@@ -86,17 +176,48 @@
 								<h1
 									class="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
 									Projects</h1>
-								<div class="mt-6 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-									<div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+								<div
+									class="mt-6 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+									<div
+										class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 										<img class="rounded-t-lg min-w-full" src="images/mimosa.png" alt="" />
 										<div class="p-5">
 											<a href="#">
-												<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Mimosa</h5>
+												<h5
+													class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+													Mimosa</h5>
 											</a>
-											<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">A fitness application, with resource deployment automated to deploy to Google Cloud Platform and Google Kubernetes Engine.</p>
-											<a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+											<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">A fitness
+												application, with resource deployment automated to deploy to Google
+												Cloud Platform and Google Kubernetes Engine.</p>
+											<p>Tools used:
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Java</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Spring
+													Boot</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Typescript</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">React</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Kubernetes</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Helm</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Terraform</span>
+												<span
+													class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">GCP</span>
+											</p>
+											<a href="#"
+												class="mt-3 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 												Read more
-												<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+												<svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor"
+													viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd"
+														d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+														clip-rule="evenodd"></path>
+												</svg>
 											</a>
 										</div>
 									</div>
@@ -114,48 +235,226 @@
 								<h1
 									class="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
 									Experience</h1>
-								<ol class="relative border-l border-gray-200 dark:border-gray-700 mt-6">                  
-									<li class="mb-10 ml-6">            
-										<span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+								<ol class="relative border-l border-gray-200 dark:border-gray-700 mt-6">
+									<li class="mb-10 ml-6">
+										<span
+											class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
+												fill="currentColor" viewBox="0 0 20 20"
+												xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd"
+													d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+													clip-rule="evenodd"></path>
+											</svg>
 										</span>
-										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Data Engineer</h2>
-										<h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">Grab<span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 ml-3">Current</span></h3>
-										<time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Jun 2022 - Present</time>
+										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Data Engineer
+										</h2>
+										<h3
+											class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+											Grab<span
+												class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 ml-3">Current</span>
+										</h3>
+										<time
+											class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Jun
+											2022 - Present</time>
 										<ul class="ml-4 mb-4 list-disc">
 											<li>
-												<p class="text-base font-normal text-gray-500 dark:text-gray-400">Consolidate and integrate seperate ETL systems into a single unified system, reducing cost by approximately $360,000 per year.</p>
+												<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+													Consolidate and integrate seperate ETL systems into a single unified
+													system, reducing cost by approximately $360,000 per year.</p>
 											</li>
 											<li>
-												<p class="text-base font-normal text-gray-500 dark:text-gray-400">Refactor to increase idempotency and allow for graceful restart of services.</p>
+												<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+													Refactor to increase idempotency and allow for graceful restart of
+													services.</p>
 											</li>
 										</ul>
 										<p>Tools:
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Python</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Django</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Typescript</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">React</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Airflow</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Kubernetes</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Helm</span>
-											<span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Terraform</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Python</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Django</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Typescript</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">React</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Airflow</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Kubernetes</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Helm</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Terraform</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">AWS</span>
 										</p>
 									</li>
 									<li class="mb-10 ml-6">
-										<span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+										<span
+											class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
+												fill="currentColor" viewBox="0 0 20 20"
+												xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd"
+													d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+													clip-rule="evenodd"></path>
+											</svg>
 										</span>
-										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Data Engineer</h2>
-										<h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Singapore Press Holdings</h3>
-										<time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Jul 2020 - May 2022</time>
+										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Data Engineer
+										</h2>
+										<h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Singapore
+											Press Holdings</h3>
+										<time
+											class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Jul
+											2020 - May 2022</time>
+										<p>Tools:
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Python</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">Airflow</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">GCP</span>
+										</p>
 									</li>
 									<li class="ml-6">
-										<span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+										<span
+											class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
+												fill="currentColor" viewBox="0 0 20 20"
+												xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd"
+													d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+													clip-rule="evenodd"></path>
+											</svg>
 										</span>
-										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Software Engineer Associate</h2>
-										<h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Accenture</h3>
-										<time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Aug 2018 - Jul 2020</time>
+										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Software
+											Engineer Associate</h2>
+										<h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Accenture
+										</h3>
+										<time
+											class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Aug
+											2018 - Jul 2020</time>
+										<p>Tools:
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">C#</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">.NET
+												MVC 5</span>
+											<span
+												class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-1">React</span>
+										</p>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="education" class="mt-12">
+				<div class="sm:px-8 mt-9">
+					<div class="mx-auto max-w-7xl lg:px-8">
+						<div class="relative px-4 sm:px-8 lg:px-12">
+							<div class="mx-auto max-w-2xl lg:max-w-5xl">
+								<h1
+									class="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+									Education</h1>
+									<div
+									class="mt-6 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2">
+									<div
+										class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+										<div class="p-5">
+											<h3
+												class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+												National University of Singapore</h5>
+											<h5 class="text-gray-500 dark:text-gray-300">Singapore</h4>
+											<h4 class="text-gray-900 dark:text-white">Bachelor of Technology (Software Engineering)</h5>
+											<h4 class="text-gray-900 dark:text-white">CGPA: 4.81/5.0</h5>
+										</div>
+										<div class="px-5 pb-5">
+											<h5 class="text-1.5 font-bold">Relevant Coursework</h5>
+											<ul class="list-disc pl-4">
+												<li>Parallel and Distributed Software Engineering</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<ol class="relative border-l border-gray-200 dark:border-gray-700 mt-6">
+									<li class="mb-10 ml-6">
+										<span
+											class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
+												fill="currentColor" viewBox="0 0 20 20"
+												xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+												<path clipRule="evenodd" fillRule="evenodd"
+													d="M9.664 1.319a.75.75 0 01.672 0 41.059 41.059 0 018.198 5.424.75.75 0 01-.254 1.285 31.372 31.372 0 00-7.86 3.83.75.75 0 01-.84 0 31.508 31.508 0 00-2.08-1.287V9.394c0-.244.116-.463.302-.592a35.504 35.504 0 013.305-2.033.75.75 0 00-.714-1.319 37 37 0 00-3.446 2.12A2.216 2.216 0 006 9.393v.38a31.293 31.293 0 00-4.28-1.746.75.75 0 01-.254-1.285 41.059 41.059 0 018.198-5.424zM6 11.459a29.848 29.848 0 00-2.455-1.158 41.029 41.029 0 00-.39 3.114.75.75 0 00.419.74c.528.256 1.046.53 1.554.82-.21.324-.455.63-.739.914a.75.75 0 101.06 1.06c.37-.369.69-.77.96-1.193a26.61 26.61 0 013.095 2.348.75.75 0 00.992 0 26.547 26.547 0 015.93-3.95.75.75 0 00.42-.739 41.053 41.053 0 00-.39-3.114 29.925 29.925 0 00-5.199 2.801 2.25 2.25 0 01-2.514 0c-.41-.275-.826-.541-1.25-.797a6.985 6.985 0 01-1.084 3.45 26.503 26.503 0 00-1.281-.78A5.487 5.487 0 006 12v-.54z" />
+											</svg>
+										</span>
+										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Bachelor of
+											Technology (Software Engineering)</h2>
+										<h3
+											class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+											National University of Singapore</h3>
+										<time
+											class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Aug
+											2019 - Jul 2023</time>
+										<ul class="mb-4">
+											<li>
+												<p class="text-base font-normal text-gray-500 dark:text-gray-400"><span
+														class="text-base font-normal text-black dark:text-cream-100">4.81</span>
+													of 5.0</p>
+											</li>
+										</ul>
+									</li>
+									<li class="mb-10 ml-6">
+										<span
+											class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
+												fill="currentColor" viewBox="0 0 20 20"
+												xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+												<path clipRule="evenodd" fillRule="evenodd"
+													d="M9.664 1.319a.75.75 0 01.672 0 41.059 41.059 0 018.198 5.424.75.75 0 01-.254 1.285 31.372 31.372 0 00-7.86 3.83.75.75 0 01-.84 0 31.508 31.508 0 00-2.08-1.287V9.394c0-.244.116-.463.302-.592a35.504 35.504 0 013.305-2.033.75.75 0 00-.714-1.319 37 37 0 00-3.446 2.12A2.216 2.216 0 006 9.393v.38a31.293 31.293 0 00-4.28-1.746.75.75 0 01-.254-1.285 41.059 41.059 0 018.198-5.424zM6 11.459a29.848 29.848 0 00-2.455-1.158 41.029 41.029 0 00-.39 3.114.75.75 0 00.419.74c.528.256 1.046.53 1.554.82-.21.324-.455.63-.739.914a.75.75 0 101.06 1.06c.37-.369.69-.77.96-1.193a26.61 26.61 0 013.095 2.348.75.75 0 00.992 0 26.547 26.547 0 015.93-3.95.75.75 0 00.42-.739 41.053 41.053 0 00-.39-3.114 29.925 29.925 0 00-5.199 2.801 2.25 2.25 0 01-2.514 0c-.41-.275-.826-.541-1.25-.797a6.985 6.985 0 01-1.084 3.45 26.503 26.503 0 00-1.281-.78A5.487 5.487 0 006 12v-.54z" />
+											</svg>
+										</span>
+										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Specialist
+											Diploma in Information Systems Development</h2>
+										<h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Nanyang
+											Polytechnic</h3>
+										<time
+											class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Oct
+											2018 - Oct 2019</time>
+										<ul class="mb-4">
+											<li>
+												<p class="text-base font-normal text-gray-500 dark:text-gray-400"><span
+														class="text-base font-normal text-black dark:text-cream-100">3.775</span>
+													of 4.0</p>
+											</li>
+										</ul>
+									</li>
+									<li class="ml-6">
+										<span
+											class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+											<svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300"
+												fill="currentColor" viewBox="0 0 20 20"
+												xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+												<path clipRule="evenodd" fillRule="evenodd"
+													d="M9.664 1.319a.75.75 0 01.672 0 41.059 41.059 0 018.198 5.424.75.75 0 01-.254 1.285 31.372 31.372 0 00-7.86 3.83.75.75 0 01-.84 0 31.508 31.508 0 00-2.08-1.287V9.394c0-.244.116-.463.302-.592a35.504 35.504 0 013.305-2.033.75.75 0 00-.714-1.319 37 37 0 00-3.446 2.12A2.216 2.216 0 006 9.393v.38a31.293 31.293 0 00-4.28-1.746.75.75 0 01-.254-1.285 41.059 41.059 0 018.198-5.424zM6 11.459a29.848 29.848 0 00-2.455-1.158 41.029 41.029 0 00-.39 3.114.75.75 0 00.419.74c.528.256 1.046.53 1.554.82-.21.324-.455.63-.739.914a.75.75 0 101.06 1.06c.37-.369.69-.77.96-1.193a26.61 26.61 0 013.095 2.348.75.75 0 00.992 0 26.547 26.547 0 015.93-3.95.75.75 0 00.42-.739 41.053 41.053 0 00-.39-3.114 29.925 29.925 0 00-5.199 2.801 2.25 2.25 0 01-2.514 0c-.41-.275-.826-.541-1.25-.797a6.985 6.985 0 01-1.084 3.45 26.503 26.503 0 00-1.281-.78A5.487 5.487 0 006 12v-.54z" />
+											</svg>
+										</span>
+										<h2 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">Diploma in
+											Information Technology</h2>
+										<h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Nanyang
+											Polytechnic</h3>
+										<time
+											class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Apr
+											2015 - Apr 2018</time>
+										<ul class="mb-4">
+											<li>
+												<p class="text-base font-normal text-gray-500 dark:text-gray-400"><span
+														class="text-base font-normal text-black dark:text-cream-100">4.0</span>
+													of 4.0</p>
+											</li>
+										</ul>
 									</li>
 								</ol>
 							</div>
@@ -164,7 +463,9 @@
 				</div>
 			</section>
 		</main>
+		<footer>
+
+		</footer>
 	</div>
 </body>
-
 </html>
