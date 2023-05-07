@@ -1,7 +1,3 @@
-tailwind.config = {
-    darkMode: 'class',
-}
-
 /**
  * User Preferences
  */
@@ -12,7 +8,9 @@ function getDefaultSystemTheme() {
 
 function init() {
     const theme = getOrCreatePreference('theme', getDefaultSystemTheme());
-    setTheme(theme);
+    if (theme === 'dark') {
+        setTheme(theme);
+    }
 }
 
 function toggleDark() {

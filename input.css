@@ -1,3 +1,7 @@
+:root {
+	--header-height: 118px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
